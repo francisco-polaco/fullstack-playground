@@ -1,11 +1,23 @@
 package io.francisco.dudademo.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.Objects;
 
+@Entity
 public class Note {
+    @Id
     private final String id;
     private final String title;
     private final String content;
+
+    public Note() {
+        id = null;
+        title = null;
+        content = null;
+    }
 
     public Note(String id, String title, String content) {
         this.id = id;
